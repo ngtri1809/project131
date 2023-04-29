@@ -13,7 +13,7 @@ Sigma Mail is a modern, web-based email application that allows registered users
 SSH Clone:  
 git clone git@github.com:ngtri1809/project131.git   
 HTTPS Clone:  
-https://github.com/ngtri1809/project131.git  
+git clone https://github.com/ngtri1809/project131.git  
 
 2. Use pip to install libraries:   
 pip install sqlalchemy, flask, flask_login, flask_sqlalchemy, sqlalchemy, flask_wtf, wtf_forms, datetime, werkzeug
