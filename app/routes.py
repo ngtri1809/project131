@@ -158,14 +158,14 @@ def todo():
 @myapp_obj.route("/delete", methods=['POST']) #only use POST method to change database, no need to "GET" something from database
 @login_required
 def delete():
-    todo_list = Todo.query.filter_by(user=current_user)
-    inbox_messages = Message.query.filter_by(recipient=current_user).all()
-    sent_messages = Message.query.filter_by(sender=current_user).all()
-    for todo in todo_list:
+    todo_list = Todo.query.filter_by(user=current_user) #get all todo tasks
+    inbox_messages = Message.query.filter_by(recipient=current_user).all() #get all inbox messages
+    sent_messages = Message.query.filter_by(sender=current_user).all() #get all sent messages
+    for todo in todo_list: #delete all todo tasks
         db.session.delete(todo)
-    for message in sent_messages:
+    for message in sent_messages: #delete all sent messages
         db.session.delete(message)
-    for message in inbox_messages:
+    for message in inbox_messages: #delete all inox messages
         db.session.delete(message)
     db.session.delete(current_user) #delete user from database
     db.session.commit() #commit the changes
