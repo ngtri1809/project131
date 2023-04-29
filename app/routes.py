@@ -118,12 +118,13 @@ def sent():
     messages = Message.query.filter_by(sender=current_user).order_by(Message.timestamp.desc()).all()
     return render_template('sent.html', messages=messages) #renders the sent messsages page
 
-#add task
+#To Do List
 @login_required
 @myapp_obj.route('/add', methods=['POST'])
 def add():
+    user=current_user
     name=request.form.get("name")
-    new_task=Todo(name=name,done=False)
+    new_task=Todo(name=name,done=False,user=user)
     db.session.add(new_task)
     db.session.commit()
     return redirect(url_for("todo"))
@@ -145,6 +146,6 @@ def delete_item(todo_id):
 
 @myapp_obj.route("/todo", methods=['POST','GET'])
 def todo():
-    todo_list = Todo.query.all()
+    todo_list = Todo.query.filter_by(user=current_user)
     return render_template('todo.html', todo_list=todo_list)
 

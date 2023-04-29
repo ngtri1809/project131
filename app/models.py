@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(32), nullable=False)
     password = db.Column(db.String(32), nullable=False)
     email = db.Column(db.String(100), nullable=False)
-
+    todos = db.relationship('Todo', backref='author')
     def set_password(self, password):
         self.password = generate_password_hash(password)
 
@@ -38,8 +38,11 @@ class Message(db.Model):
 
 class Todo(db.Model):
     task_id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     name = db.Column(db.String(100))
     done = db.Column(db.Boolean)
+
+    user = db.relationship('User', foreign_keys=[user_id])
 
 @login_manager.user_loader
 def load_user(user_id):
