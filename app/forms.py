@@ -26,7 +26,7 @@ class ComposeForm(FlaskForm):
         if not user:
             raise ValidationError('User does not exist')
 
-class ChangePasswordForm(FlaskForm):
+class ChangePasswordForm(FlaskForm): #takes in user's email, new_password they want to have, and submit
     email = StringField('Email', validators=[DataRequired()])
     new_password = PasswordField('New Password', validators=[DataRequired()])
     submit = SubmitField('Change Password')

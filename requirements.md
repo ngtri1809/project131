@@ -24,28 +24,25 @@ Firefox
 
 ## Use Cases
 
-- Name: Add friend (Tri Nguyen)
+### Name: Add friend (Tri Nguyen)
 - Summary: User can add friend to their friend list
 - Actor(s):User
 - Pre-condition:
 1. The user is logged in to their account on website
-2. The user already enter the user name they want to add into the search bar	
-- Trigger: User click "add friend" button
+- Trigger: User click "Friend List" button
 - Primary Sequence:
-1. The system displays the friend's profile information, along with an "Add Friend" button
-2. The user select "Add friend" button
-3. The system sends a friend requets to the selected friend's email address
-4. The system notifies the user that their friend request has been sent.
+1. The system displays the search bar, along with an "Add Friend" button
+2. The user type in the username for of the friend they want to add
+3. The user select "Add friend" button
+4. The system sends a friend requets to the selected friend's email address
 - Alternate Sequence: 
-1. If the entered name or email address is invalid, the system displays an error message and prompts the 
-user to enter a valid name or email address.
-2. If a friend request has already been sent to the selected friend, the system displays a message 
-indicating that the request has already been sent.
+1. If the entered name or email address is invalid, the system displays an error message and prompts the user to enter a valid name or email address.
+2. If a friend request has already been sent to the selected friend, the system displays a message indicating that the request has already been sent.
 - Postconditions:
-The user's friend list is updated to if the friend accept the request or notifies the user if the friend rejects the friend request	
+The user's friend list is updated to if the friend accept the request 
 	
 
-- Name: Edit To-do component(Tri Nguyen)
+### Name: Edit To-do component(Tri Nguyen)
 - Sumamry: The user can create a to-do list
 - Actor(s): User
 - Pre-condition: The user is logged in to their account on website
@@ -53,14 +50,14 @@ The user's friend list is updated to if the friend accept the request or notifie
 - Primary Sequence:
 1. The website open a to-do list that showed all the tasks the user has created, sorted in due date
 2. The user write down all the tasks
-3. The user set the due date
+3. The user click the "Add" button
 - Alternative sequencde:
 If the user does not have any to-do tasks, the system prompts message the user has no tasks.
 - Post Condition:
-The user is able to mark a task as complete, and delete a task
+The user is able to update a task as done or undone, and delete a task
 	
 
-- Name: Search messages (Jasper)
+### Name: Search messages (Jasper)
 - Summary: The use can enter keywords to look for a specific email that contains these keywords
 - Actors: User
 - Pre-conditions: The user must be logged in
@@ -76,8 +73,25 @@ User entered key words that yielded no results. Message saying “Not found” s
 Messages that have matching keywords from the search bar are displayed OR “Not Found” 
 message is displayed as there are no matches
 
+### Name: Edit Profile (Kevin)
+- Summary: The user clicks on the "Edit Profile" button that takes them to the Edit Profile page to change/create their bio
+- Actors: User creating their bio
+- Pre-conditions: User must be logged in their account 
+- Trigger: Clicking on the "Edit Profile" button in the Main Page 
+- Primary Sequence: 
+1. User clicks on the text field under "bio"
+2. User types out their introduction in the text field
+3. User clicks the submit button
+- Alternative Sequence:
+User leaves the page without hitting submit, then the changes made in their bio won't be saved. 
+OR
+User clicks submit without anything inputted in the text field, program will prompt them to fill in the blank
+- Post-Condtions: 
+User's customized bio appears when a user or a friend views the profile
+OR
+User doesn't click submit, then their changes won't appear in their bio
 
-- Name: Bookmarking messages (Kevin)
+### Name: Bookmarking messages (Kevin)
 - Summary: The user can click on an icon to bookmark messages in their inbox 
 - Actors: User that is bookmarking the message
 - Pre-conditions: User must be logged in, and have a message in their inbox 
@@ -94,7 +108,7 @@ OR
 Message will disappear from the folder when a user clicks on an already bookmarked message
 
 
-- Name: Changing password (Kevin)
+### Name: Changing password (Kevin)
 - Summary: The user can change their password through the settings page
 - Actors: User that is changing their password
 - Pre-Conditions: User must be logged in their account and in the settings page
@@ -109,7 +123,7 @@ If the user enters the same password as their previous one, then error "Try new 
 User will have a new password in their account, and won't be able to use their previous one to login or user failed to change their password
 
 
-- Name: Composing messages (Trung)
+### Name: Composing messages (Trung)
 - Summary: The user clicks on the "compose" button to create an email draft where they will enter text or files onto the textbox, and pick a recipient to send to 
 - Actors: User creating the email
 - Pre-conditions: User must be logged in, and in the inbox page
@@ -128,7 +142,7 @@ User will have a new password in their account, and won't be able to use their p
 2. Message will appear in sent messages folder
 	
 
-- Name: Register an account (Trung)
+### Name: Register an account (Trung)
 - Summary: A user on the website can register for an account to use its application
 - Actors: The user registering for the website
 - Pre-conditions: The user must be on the website and not already logged in
@@ -145,19 +159,21 @@ User will have a new password in their account, and won't be able to use their p
 The user made the new account and can log in, or the user fails to make the new account and can’t log in.
 	
 
-- Name: Remove friend (Trung)
-- Summary: A user on the website can remove a friend that they have added
-- Actors: The user trying to remove a friend
-- Pre-conditions: The user must be on the website and logged in
-- Trigger: Click the “Friends” button to go to their friends tab
-- Primary Sequence:
-1. The user selects the friend they want to remove by clicking on their profile
-2. The user clicks “Remove Friend” button displayed on the screen
-3. The system displays “Confirm” and “Cancel” button on the screen
-4. The user clicks “Confirm” button displayed on the screen to remove the friend
-- Alternate Sequence:
-1. The user selects “Cancel” instead of “Confirm”, then the prompted buttons disappear and the friend is not removed yet.
-2. The user have no friend in their friends list so the user is unable to remove any friend.
-- Post Condition: 
-The user removed the friend and that friend is no longer in their friend list, or the user cancelled the removal and the friend is still in their friend list.
 
+### Name: Sort emails by date
+- Summary: The user can sort the emails from oldest to newest or newest to oldest based on the receive date
+- Actors: The user that is trying to sort their email by date
+- Pre-conditions: The user must be logged in and on the mainpage
+- Trigger: Clicking a menu and selecting their desired sorting, then clicking the confirm button
+- Primary Sequence: 
+1. User opens the drop down menu
+2. User selects desired type of sort
+3. User clicks the confirm button
+- Alternative Sequence:
+1. There are no emails available to be sorted and nothing happens
+- Post Condition: 
+The emails are now sorted by whatever the user selected
+				OR
+			      There are no emails that were ever sent to the user so no emails will be sorted
+
+	
