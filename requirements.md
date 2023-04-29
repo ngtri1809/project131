@@ -164,11 +164,11 @@ The user made the new account and can log in, or the user fails to make the new 
 - Summary: The user can sort the emails from oldest to newest or newest to oldest based on the receive date
 - Actors: The user that is trying to sort their email by date
 - Pre-conditions: The user must be logged in and on the mainpage
-- Trigger: Clicking a menu and selecting their desired sorting, then clicking the confirm button
+- Trigger: Clicking a dropdown menu next to inbox
 - Primary Sequence: 
-1. User opens the drop down menu
+1. Look for the specific sorting desired
 2. User selects desired type of sort
-3. User clicks the confirm button
+3. User clicks the sort button
 - Alternative Sequence:
 1. There are no emails available to be sorted and nothing happens
 - Post Condition: 
