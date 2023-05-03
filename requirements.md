@@ -61,12 +61,11 @@ The user is able to update a task as done or undone, and delete a task
 - Summary: The use can enter keywords to look for a specific email that contains these keywords
 - Actors: User
 - Pre-conditions: The user must be logged in
-- Trigger: Selecting the search bar and type in specific keywords of what you are searching for
+- Trigger: The user clicks the search bar
 - Primary Sequence:  
-1. User selects the search bar
-2. User types in key words that may be contained in the title, sender, subject, or body of the message
-3. A list of received messages with a match appear
-4. User selects the message they are looking for
+1. User types in key words that may be contained in the title, sender, subject, or body of the message
+2. A list of received messages with a match appear
+3.User selects the message they are looking for
 - Alternative Sequence:
 User entered key words that yielded no results. Message saying “Not found” shows up
 - Post-Condition: 
@@ -91,21 +90,7 @@ User's customized bio appears when a user or a friend views the profile
 OR
 User doesn't click submit, then their changes won't appear in their bio
 
-### Name: Bookmarking messages (Kevin)
-- Summary: The user can click on an icon to bookmark messages in their inbox 
-- Actors: User that is bookmarking the message
-- Pre-conditions: User must be logged in, and have a message in their inbox 
-- Trigger: Clicking on the bookmark icon
-- Primary Sequence:
-1. User goes into their inbox
-2. User clicks the bookmark icon on the message they want to bookmark
-3. Message will appear on their bookmark folder
-- Alternative Sequence:
-User clicks the bookmark icon on a message that is already bookmarked, then message is removed from the bookmark folder 
-- Post-Conditions:
-Message appears in the bookmark folder, and the message will be marked
-OR
-Message will disappear from the folder when a user clicks on an already bookmarked message
+
 
 
 ### Name: Changing password (Kevin)
