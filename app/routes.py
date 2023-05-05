@@ -61,7 +61,8 @@ def mainpage():
     sort_by = request.form.get("sort")
     asc = Message.query.filter_by(recipient=current_user).order_by(Message.timestamp.asc()).all()
     des = Message.query.filter_by(recipient=current_user).order_by(Message.timestamp.desc()).all()
-    #renders the main page with messages and name filled in as the parameter in mainpage.html
+    #renders the main page with messages and name filled in as the parameter in mainpage.html and are sorted in eiher newest to oldest 
+    # and vice versa
 
    
 

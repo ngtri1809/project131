@@ -5,31 +5,31 @@
     </head>
     <body>
         <h1>Welcome to S-Mail, {{ name }}</h1>
-        <form action="{{ url_for('logout') }}" method="post">
+        <form action="{{ url_for('logout') }}" method="post"> <!-- button to logout-->
             <button type="submit">Logout</button>
         </form>
-        <form action="{{ url_for('settings') }}">
+        <form action="{{ url_for('settings') }}"> <!-- button to open settings-->
             <button type="submit">Settings</button>
         </form>
-        <form action="{{ url_for('sent') }}">
+        <form action="{{ url_for('sent') }}"> <!--button to view sent messages-->
             <button type="submit">View sent messages</button>
         </form>
         <br>
-        <form action="{{ url_for('compose') }}" method="post">
+        <form action="{{ url_for('compose') }}" method="post"> <!-- button to compose a message-->
             <button type="submit">Compose message</button>
         </form><br>
         
-        <form action="{{ url_for('todo') }}" method="post">
+        <form action="{{ url_for('todo') }}" method="post"> <!-- button to open to-do list-->
             <button type="submit">To-Do List</button>
         </form><br>
-        <form action="{{ url_for('friend_list') }}" method="post">
+        <form action="{{ url_for('friend_list') }}" method="post"> <!-- button to open friends list-->
           <button type="submit">Friend List</button>
       </form><br>
         <br>
         <br>
         <h2>Inbox</h2>
         <br>
-        <form method="post" action="{{ url_for('mainpage') }}">
+        <form method="post" action="{{ url_for('mainpage') }}">   <!--drop down menu inorder to select the sorting option-->
             <label>Sort by:</label>
             <select name = "sort">
             <option value="" selected="selectd" hidden="hidden">Choose here</option>
@@ -43,7 +43,7 @@
         <br><br>
         <tbody>
             {%if sort_by == 'Newest first'%}
-            {% for message in des %}
+            {% for message in des %}       <!-- des has sorted emails from newest to oldest, so the for loop just prints each email out --> 
                 <tr>
                     <time>{{ message.timestamp.strftime('%Y-%m-%d %I:%M %p') }}</time>
                     <br>
@@ -57,7 +57,7 @@
                 </tr>
             {% endfor %}
             {%else%}
-            {% for message in asc %}
+            {% for message in asc %}     <!--- asc has sorted emails from oldest to newest, so the for loop just prints each email out -->
                 <tr>
                     <time>{{ message.timestamp.strftime('%Y-%m-%d %I:%M %p') }}</time>
                     <br>
