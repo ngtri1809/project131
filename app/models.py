@@ -50,8 +50,11 @@ class Message(db.Model):
 
 class Todo(db.Model):
     task_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
-    done = db.Column(db.Boolean)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) # set the foreign key from user
+    name = db.Column(db.String(100)) # name of the task
+    done = db.Column(db.Boolean) #user mark as done or undone
+    #Define relationship between user and todo list's tasks using the user_id 
+    user = db.relationship('User', foreign_keys=[user_id])
 
 @login_manager.user_loader
 def load_user(user_id):

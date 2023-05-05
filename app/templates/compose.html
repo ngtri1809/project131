@@ -13,9 +13,9 @@
         {{form.body(rows='10',cols='65')}}
     </p>
     
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
+    {% for error in form.recipient.errors %}
+        {{ error }}
+    {% endfor %}
 
 
         <p>{{form.submit()}}</p>

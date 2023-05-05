@@ -1,7 +1,8 @@
-<form action="{{ url_for('mainpage') }}">
+<form action="{{ url_for('mainpage') }}"> <!--a button that redirects to the 'mainpage' route when clicked.-->
   <button type="submit">Back</button>
 </form>
 <h1>To Do List</h1>
+  <!--a form that allows users to add a new task to the to-do list.-->
   <form action="/add" method="post">
     <div>
       <label>Enter the task</label>
@@ -9,12 +10,13 @@
       <button type="submit">Add</button>
     </div>
   </form><br>
+    <!--creates a table that displays all of the tasks in the to-do list-->
     <table>
       <tbody>
         {%for todo in todo_list%}
-        <tr>
-          <td>{{todo.task_id}}</td>
-          <td>{{todo.name}}</td>
+        <p>
+          <td>*{{todo.name}}</td>
+          <!--Displace not done or done based on the done attribute of the task-->
           {% if todo.done==False %}
           <td>Not Done</td>
           {%else%}
@@ -22,7 +24,7 @@
           {%endif%}
           <td><a href="/update/{{todo.task_id}}">Update</a></td>
           <td><a href="/delete_item/{{todo.task_id}}">Delete</a></td>
-        </tr>
+        </p>
       </tbody>
     </table>
   {%endfor%}
