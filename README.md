@@ -36,6 +36,10 @@ In the terminal, press ctrl + C and it will end the program
 6. Compose: User can compose an email where they will fill in the recipient, subject, and body of the email. They can click "send" to send it to the selected user afterwards
 7. Sort-by-date: User can view their message sorted by date by selecting the order in the dropdown menu and clicking "sort"
 8. Create to-do list: The user can create a to-do list, update, and delete item inside the list
+9. Search bar: User can search in text box, and use the drop down function to search by subject, username, message body, or all of the above. 
+10. Friends list: search for an existing username and email to add the user in a list. Similar to a contact list. 
+11. Undo: User can go to the sent messages page, and click the "undo" button to delete the message they sent 
+12. Bookmarking: User can click on the "bookmark" button on a message in their inbox, and it will be displayed on the bookmark page. When user clicks the "Unbookmark" button on message that is already bookmarked, the message is removed from the page
 
 ## Technologies Used
 1. Coding Languages: Python, HTML, CSS
@@ -43,7 +47,7 @@ In the terminal, press ctrl + C and it will end the program
 3. Collaboration platforms: Github and Discord
 
 ## Acknowledgments
-- Tri Nguyen - Implemented todo list
-- Jasper Nguyen - Implemented sort messages by date
-- Kevin Aquino - Implemented change password
+- Tri Nguyen - Implemented todo list, and add or remove friend from friends list 
+- Jasper Nguyen - Implemented sort messages by date, and search bar with drop down function
+- Kevin Aquino - Implemented change password, Undo button, and bookmarking function
 - Trung Tran - Implemented compose,login,logout,register,delete account
