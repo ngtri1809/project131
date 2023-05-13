@@ -37,9 +37,10 @@ In the terminal, press ctrl + C and it will end the program
 7. Sort-by-date: User can view their message sorted by date by selecting the order in the dropdown menu and clicking "sort"
 8. Create to-do list: The user can create a to-do list, update, and delete item inside the list
 9. Search bar: User can search in text box, and use the drop down function to search by subject, username, message body, or all of the above. 
-10. Friends list: search for an existing username and email to add the user in a list. Similar to a contact list. 
+10. Friends list: search for an existing username and email to add the user in a list. Similar to a contact list. User can also view their friend's profile, and delete the a friend from their friend's list. 
 11. Undo: User can go to the sent messages page, and click the "undo" button to delete the message they sent 
 12. Bookmarking: User can click on the "bookmark" button on a message in their inbox, and it will be displayed on the bookmark page. When user clicks the "Unbookmark" button on message that is already bookmarked, the message is removed from the page
+13. Edit profile: User can click on the "Profile" header, and click on the "edit profile" button. They can change their appearing name, and create, change or delete their bio. 
 
 ## Technologies Used
 1. Coding Languages: Python, HTML, CSS
@@ -48,6 +49,6 @@ In the terminal, press ctrl + C and it will end the program
 
 ## Acknowledgments
 - Tri Nguyen - Implemented todo list, and add or remove friend from friends list 
-- Jasper Nguyen - Implemented sort messages by date, and search bar with drop down function
+- Jasper Nguyen - Implemented sort messages by date, search bar with drop down function, edit profile, and user profile
 - Kevin Aquino - Implemented change password, Undo button, and bookmarking function
 - Trung Tran - Implemented compose,login,logout,register,delete account
