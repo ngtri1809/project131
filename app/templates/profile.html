@@ -19,7 +19,7 @@ User Profile
 <span class="rounded-pill" style="width:130px"></span>
     <div class = "container-fluid"></div>
 
-    <p>
+    <p> <!-- pulls up name, username, email, and bio-->
         Name: {{ current_user.name }}
         <br>
         Username: {{ current_user.username }}
@@ -35,6 +35,6 @@ User Profile
 </body>
 
 <form action="{{ url_for('edit_profile') }}" method="post">
-<button class="btn btn-outline-dark" type="submit">Edit Profile</button> 
+<button class="btn btn-outline-dark" type="submit">Edit Profile</button>   <!-- button to update profile-->
 
 </form><br> </center></div></div></div></h1></div>

@@ -39,7 +39,7 @@ class AddFriendForm(FlaskForm):
 
 
 class updateForm(FlaskForm):
-    bio = StringField('Bio')
-    update1 = SubmitField('Update Name')
-    name = StringField('Name') 
+    bio = StringField('Bio') #takes in bio
+    update1 = SubmitField('Update Name') 
+    name = StringField('Name')  #takes in name
     update2 = SubmitField('Update Bio')

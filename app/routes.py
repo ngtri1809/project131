@@ -246,13 +246,13 @@ def friend_list(): #display all the friend object in the database
 
 @myapp_obj.route('/profile', methods = ['GET', 'POST'])
 @login_required
-def profile(): 
+def profile():   #renders profile page
     form = updateForm()
     return render_template('profile.html', form=form)
 
 @myapp_obj.route('/editprofile', methods = ['GET', 'POST'])
 @login_required
-def edit_profile(): 
+def edit_profile():   #allows the update of the profile
     form = updateForm()
     return render_template('editprofile.html', form=form)
 
@@ -262,10 +262,10 @@ def updateProfile():
     form = updateForm()
     if form.validate_on_submit():
         user = User.query.get(current_user.id)
-        if form.update1.data:
+        if form.update1.data:  #form to update the name
             user.name = form.name.data
             db.session.commit()
-        elif form.update2.data:
+        elif form.update2.data:  #form to update the bio
             user.bio = form.bio.data
             db.session.commit()
         return redirect(url_for('profile'))
@@ -277,13 +277,13 @@ def search_results():
     query = request.args.get('query')
     search_by = request.args.get("search_by")
     if search_by == "Body":    
-        results = Message.query.filter(Message.body.contains(query)).all()        
+        results = Message.query.filter(Message.body.contains(query)).all()  #filter by body   
     elif search_by == "Subject":
-        results = Message.query.filter(Message.subject.contains(query)).all()        
+        results = Message.query.filter(Message.subject.contains(query)).all()        #filter by subject
     elif search_by == "Username":
-        results = Message.query.filter(Message.sender.has(User.username.contains(query))).all()       
+        results = Message.query.filter(Message.sender.has(User.username.contains(query))).all()       #filter by username
     else:
-        results = Message.query.filter(Message.body.contains(query) | Message.sender.has(User.username.contains(query)) | Message.subject.contains(query)).all()
+        results = Message.query.filter(Message.body.contains(query) | Message.sender.has(User.username.contains(query)) | Message.subject.contains(query)).all() #filter by everything
     return render_template('search_results.html', results=results)
 
 @myapp_obj.route('/message/<int:message_id>/bookmark', methods=['POST'])
@@ -313,6 +313,6 @@ def view_bookmark():
 @myapp_obj.route('/view_profile/<string:email>', methods = ['GET'])
 @login_required
 def view_profile(email):
-    the_friend = User.query.filter_by(email=email).first()
+    the_friend = User.query.filter_by(email=email).first()  #allows you to view your friends profile
     return render_template('friend_profile.html', the_friend=the_friend)
     
